@@ -1,3 +1,10 @@
+<link rel="stylesheet" href="lib/codemirror/lib/codemirror.css">
+<link rel="stylesheet" href="lib/codemirror/addon/hint/show-hint.css">
+<link rel="stylesheet" href="lib/codemirror/theme/cobalt.css"></script>
+
+
+
+
 
 
 <form class="form-inline"  action="index.php" method="post">
@@ -21,10 +28,8 @@
 </form>
 
 <?php
-
-
-echo EUCALITO; 
-echo "<br>"; 
+echo EUCALITO;
+echo "<br>";
 
 $archivo = (isset($_POST['archivo'])) ? $_POST['archivo'] : "index";
 
@@ -44,22 +49,33 @@ $codigo = file_get_contents("ejemplos/vista/" . $archivo_lat);
 
 <h2><?php _t("Consola"); ?></h2>
 
-<?php 
-echo ROBINSON; echo "<br>"; 
-echo URL_WEB; echo "<br>"; 
-echo PATH_WEB; echo "<br>"; 
-echo PATH_USUARIOS; echo "<br>"; 
+<?php
+echo ROBINSON;
+echo "<br>";
+echo URL_WEB;
+echo "<br>";
+echo PATH_WEB;
+echo "<br>";
+echo PATH_USUARIOS;
+echo "<br>";
 
- //mkdir(PATH_USUARIOS.'/robin', 0777); 
-
+//mkdir(PATH_USUARIOS.'/robin', 0777); 
 ?>
 
 
 <pre>
-<?php
+    <?php
     //echo var_dump($archivo_lat);
 
     $ejecutar = ($codigo != "" ) ? " latino ejemplos/vista/$archivo_lat " : "latino -a";
     echo shell_exec($ejecutar);
     ?>
 </pre>
+
+
+
+<script src="lib/codemirror/lib/codemirror.js"></script>
+<script src="lib/codemirror/mode/latino/latino.js"></script>
+<script src="lib/codemirror/addon/hint/show-hint.js"></script>
+<script src="lib/codemirror/addon/hint/latino-hint.js"></script>
+<script src="js/config.js"></script>
