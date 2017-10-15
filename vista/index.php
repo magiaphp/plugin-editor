@@ -2,7 +2,9 @@
 <link rel="stylesheet" href="lib/codemirror/addon/hint/show-hint.css">
 <link rel="stylesheet" href="lib/codemirror/theme/cobalt.css"></script>
 
-
+<?php 
+_incluir_css();
+?>
 
 
 
